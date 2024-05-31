@@ -4,7 +4,7 @@ const Heading = () => {
   return (
     <div className={styles.heading}>
       <h1 className={styles.title}>Add Tasks</h1>
-      <p className={styles.info}>This is a paragraph of text.</p>
+      <p className={styles.info}>Add Task and Press 'Enter'key</p>
     </div>
   );
 };

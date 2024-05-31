@@ -1,3 +1,8 @@
 .chal{
   float: right;
 }
+.list-group-item{
+  background-color: #b41919;
+  color: rgb(0, 255, 13);
+  
+}
