@@ -16,18 +16,30 @@ const App = () => {
   ]);
   const onKeyDown = (event) => {
     if (event.key === "Enter") {
-      let newTaks = event.target.value;
+      let newTaks = event.target.value.trim();
+      if (event.target.value==='') {
+        alert('Please enter a task');
+        return;
+        
+      }
       event.target.value = "";
       let newTaksR = [...myTasks, newTaks];
       setaddTasks(newTaksR);
     }
+
   };
+  const onDeleteBtn=(itemToDelete)=>{
+    setaddTasks(myTasks.filter(task=>task !==itemToDelete))
+    console.log(`Delete Items::> ${itemToDelete}`)
+    
+
+  }
   return (
     <Container>
       <Heading />
-      <Input handleKeyDown={onKeyDown} />
+      <Input handleKeyDown={onKeyDown} setaddTasks={setaddTasks} />
       <ErrorMsg listT={myTasks} />
-      <List listT={myTasks} />
+      <List listT={myTasks} onDeleteBtn={onDeleteBtn} />
     </Container>
   );
 };
